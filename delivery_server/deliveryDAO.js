@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'),
 Delivery = require('./data/delivery_schema'),
 conf = require('./config'),
-consts = require('../consts');
+consts = require('../consts/consts');
 
 // mLab connection 
 mongoose.connect(consts.MLAB_KEY);  
