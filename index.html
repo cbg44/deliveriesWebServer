@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Deliveries API</title>
+      <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-7">
+               <h1>Deliveries Web-Service API</h1>
+               <h4> Use the methods below in order to fetch data from JSON</h4>
+               <h5> With this API you'll be able to get all the deliveries saved in DB,</h5> <h5>get specific delivery by posting unique ID, and get a list of deliveries specified by their rally point type. </h5>
+               
+               <br>
+           </div>
+
+           <div class="col-lg-5">
+                          <img src="./public/images/deliveryman.jpg">
+
+           </div>
+                <div class="col-lg-10">
+
+               <h2><u>Documentation</u></h2>
+               <h3>Get all Deliveries</h3>
+               <h5> Method: GET </h5>
+                <h5> Request URL: <code><a href="./getAllDeliveries" target="_blank">
+                  https://deliveriesws.herokuapp.com/getAllDeliveries</a></code></h5>
+                <h5>  Response: JSON of all deliveries from DB. </h5>
+               <pre>[
+    {
+       "delivery": {
+        "id": 123456,
+        "properties": {
+            "weight_in_pounds": 2,
+            "state_of_matter": "Solid"
+        },
+        "rally_point": {
+            "type": "Post_Office",
+            "adress": "Ramat Gan, Negba"
+          }
+        },
+        "owner": {
+            "id": 30938474,
+            "name": "shoshana",
+            "adress": "tel aviv"
+        }
+    },
+...
+]           </pre>
+               <br>
+               <section>
+                  <h3>Get Delivery By ID</h3>
+                  <h5>Method: POST</h5>
+                  <h5>Required Parameters:   <code>delivery[id] = {id}</code></h5>
+                  <h5>Request URL: <code><a href="./getDeliveryByID" target="_blank">
+                  https://deliveriesws.herokuapp.com/getDeliveryByID </a></code></h5>
+                <h5> Response: JSON of single delivery identified by the ID.</h5>
+               </section>
+               <pre>
+{
+    deliveries: [
+        {
+              "delivery": {
+                "id": 123456,
+                "properties": {
+                    "weight_in_pounds": 2,
+                    "state_of_matter": "Solid"
+                },
+                "rally_point": {
+                    "type": "Post_Office",
+                    "adress": "Ramat Gan, Negba"
+                  }
+                },
+                "owner": {
+                    "id": 30938474,
+                    "name": "shoshana",
+                    "adress": "tel aviv"
+                }
+        },
+        .....
+    ]
+}</pre>
+               <br>
+               <section>
+                  <h3>Get Deliveries By Rally Point Type</h3>
+                  <h5>Method: GET</h5>
+                  <h5>Request URL <code><a href="./getDeliveriesByRallyPointType" target="_blank">
+                  https://deliveriesws.herokuapp.com/getDeliveriesByRallyPointType/?rallypoint=Post_Office</a></code></h5>
+                  <h5>Response: JSON of all the deliveries specified by Rally-Point type.</h5>
+               </section>
+               <pre>
+{
+    deliveries: [
+        {
+              "delivery": {
+                "id": 123456,
+                "properties": {
+                    "weight_in_pounds": 2,
+                    "state_of_matter": "Solid"
+                },
+                "rally_point": {
+                    "type": "Post_Office",
+                    "adress": "Ramat Gan, Negba"
+                  }
+                },
+                "owner": {
+                    "id": 30938474,
+                    "name": "shoshana",
+                    "adress": "tel aviv"
+                }
+        },
+        {
+
+              "delivery": {
+                    "id": 2589613,
+                    "properties": {
+                        "weight_in_pounds": 3,
+                        "state_of_matter": "Solid"
+                    },
+                    "rally_point": {
+                        "type": "Post_Office",
+                        "adress": "Tel Aviv, Ramat Aviv"
+                    },
+                    "sender": "Lupa ltd"
+                },
+                "owner": {
+                    "id": 336199652,
+                    "name": "Dana",
+                    "adress": "tel aviv"
+                }
+        },
+        .....
+    ]
+}</pre>
+               <br>
+            </div>
+                            <div class="col-lg-2">
+</div>
+        </div>
+         </div>
+      </div>
+      <script src="js/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+   </body>
+</html>
