@@ -1,8 +1,24 @@
-img{
+.deliveryman{
 	width:200px;
 }
 
-.container{
+.chucha{
+	width:300px;
+}
 
+.container{
 	margin-top:40px;
+}
+
+#error{
+	background: #474444;
+
+}
+.error{
+
+ font-family: 'Roboto', sans-serif;
+	margin:auto;
+	color:white;
+	width:500px;
+	text-align: center;
 }
